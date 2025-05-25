@@ -1,34 +1,57 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
+import Nav from "./components/Nav"
+import Home from "./layouts/Home"
+import Footer from "../src/components/Footer";
+import Productos from "./components/Productos"
+import Detalle from "./components/Detalle";
+import Carrito from "./components/Carrito";
+import { useState } from "react";
+
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [carrito, setCarrito] = useState([])
+
+
+        function agregarCarrito(producto){
+            const existe = carrito.find(p => p.id === producto.id)
+                if(existe){
+                const carritoActualizado = carrito.map((p) => {
+                    if(p.id === producto.id){
+                        const productoActualizado = {...p, cantidad: p.cantidad + producto.cantidad}
+                        return productoActualizado
+                    }else{
+                        return p
+                    }
+                })
+                setCarrito(carritoActualizado)
+            }else{
+                let nuevoCarrito = [...carrito,producto]
+                setCarrito(nuevoCarrito)
+            }
+        }
+
+
+        function borrarDelCarrito(id){
+            const nuevoCarrito = carrito.filter((p) => p.id !== id);
+            setCarrito(nuevoCarrito);
+        }
+
+
+ 
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <Router>
+        <>
+          <Nav productosCarrito={carrito}/>
+          <Routes>
+            <Route path="/" element={<Home/>} />
+            <Route path='/products' element={<Productos/>}/>
+            <Route path='/productos/:id' element={<Detalle funcionAgregar={agregarCarrito}/>}/>
+            <Route path='/carrito' element={<Carrito productos={carrito} borrarProducto={borrarDelCarrito} />}/> 
+          </Routes>
+          <Footer/>
+        </>
+    </Router>
   )
 }
 

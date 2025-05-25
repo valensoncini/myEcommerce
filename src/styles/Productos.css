@@ -1,0 +1,8 @@
+.productsContainer{
+    background-color: #F9F9F9;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 5px;
+    margin: 1em 0.5em;
+}

@@ -1,0 +1,32 @@
+.mainContainer{
+    width: 100%;
+    height: auto;
+    background-color: #FFFFFF;
+    color: #1E1E1E;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.exhibitionContainer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    background-color: #F9F9F9;
+}
+
+.mainContainer button{
+    text-align: center;
+    background-color: #0077B6;
+    border-color: transparent;
+    border-radius: 15px;
+    padding: 1em;
+    margin: 1em 0;
+    cursor: pointer;
+    transition: border-color 0.25s;
+}
+.mainContainer button:hover{
+    border-color: #1E1E1E;
+}

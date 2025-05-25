@@ -1,0 +1,35 @@
+
+.navContainer{
+    background-color: #1B263B;
+    color: #FFFFFF;
+    width: 100%;
+    height: auto;
+    padding: 2em;
+}
+
+.navContainer ul{
+    display: flex ;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+
+li{
+    list-style: none;
+    cursor: pointer;
+    padding: 1em;
+    border: 1px solid transparent;
+    transition: border-color 0.25s;
+   
+}
+
+li:hover{
+    border-color: #646cff;
+    border-radius: 10%;
+}
+
+a{
+    text-decoration: none;
+    color:#FFFFFF;;
+}
