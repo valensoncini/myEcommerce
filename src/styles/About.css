@@ -1,0 +1,16 @@
+.aboutContainer{
+    background-color: #F9F9F9;
+    border: 1px solid grey;
+    padding: 2em;
+    margin: 1em 1em;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    font-size: 2em;
+}
+
+.aboutContainer h2{
+    margin: 0 0 1em 0;
+}

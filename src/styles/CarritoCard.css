@@ -1,0 +1,39 @@
+.carritoCardContainer{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    background-color: #FFFFFF;
+    border: 1px solid #E0E0E0;
+    padding: 1em;
+    margin: 2em;
+    border-radius: 15px;
+}
+
+.carritoCardContainer button{
+    margin-left: 10rem;
+    border-radius: 15px;
+    border-color: transparent;
+    padding: 0.5em;
+    cursor: pointer;
+    transition: border-color 0.25s;
+}
+.carritoCardContainer button:hover{ 
+    border-color: #00B4D8;
+}
+
+.unitPrice, .totalPrice{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.startCarrito, .middleCarrito{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}

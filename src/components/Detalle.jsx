@@ -2,9 +2,10 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import '../styles/Detalle.css'
 import { alertGenerico } from "../assets/alertGenerico";
+import { Navigate } from "react-router-dom";
 
 
-function Detalle({funcionAgregar}){
+function Detalle({funcionAgregar, user}){
 
     const {id} = useParams();
     const [producto, setProducto] = useState(null)
@@ -53,6 +54,12 @@ function Detalle({funcionAgregar}){
                 setCantidad(cantidad - 1)
             }
        
+        }
+
+        if(!user){
+            return(
+                <Navigate to="/login" replace/>
+            )
         }
 
         return (

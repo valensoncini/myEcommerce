@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import '../styles/Main.css'
+import '../styles/generalStyle.css'
 import ExhibitionCard from '../complements/ExhibitionCard'
 import { Link } from 'react-router-dom'
 

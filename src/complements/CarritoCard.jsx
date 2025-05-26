@@ -1,4 +1,5 @@
 import { alertGenerico } from "../assets/alertGenerico";
+import '../styles/CarritoCard.css'
 
 
 function CarritoCard({funcionBorrado, item}){
@@ -11,20 +12,21 @@ function CarritoCard({funcionBorrado, item}){
     return(
         <>
             <div className="carritoCardContainer">
-                <img src={item.img} alt="imagen-item" />
-                <h2>{item.name}</h2>
-                <p>{item.description} </p>
-                <div>
-                    Precio unitario
-                    <p>{item.price}</p>
+                <div className="startCarrito">
+                    <img src={item.img} alt="imagen-item" />
+                    <h2>{item.name}</h2>
                 </div>
-                <div>
-                    Precio Total
-                    <p>{item.price * item.cantidad} </p>
+                <div className="middleCarrito">
+                    <div className="unitPrice">
+                        Precio Unitario
+                        <p>${item.price}</p>
+                    </div>
+                    <div className="totalPrice">
+                        Precio Total
+                        <p>${item.price * item.cantidad} </p>
+                    </div>
+                    <span>{item.cantidad}</span>
                 </div>
-                
-                <span>{item.cantidad}</span>
-                <br/>
                 <button onClick={borrar}>Eliminar</button>
             </div>
         </>

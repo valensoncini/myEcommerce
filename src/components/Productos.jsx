@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import ProductsCard from "../complements/ProductsCard";
 import '../styles/Productos.css'
+import '../styles/generalStyle.css'
 
 
 function Productos(){

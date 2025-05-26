@@ -1,14 +1,50 @@
 *{
     padding: 0;
     margin: 0;
-    font-family: 'Poppins', sans-serif;
+    font-family: Georgia, 'Times New Roman', Times, serif;
     box-sizing: border-box;
 
 }
 
-body{
-   width: 100%;
+
+
+.contenedorGeneral{
+    width: 100%;
    height: 100vh;
    background-color: #F9F9F9;
    color: #1E1E1E;
+    display: grid;
+   grid-template-rows: 100px auto auto 2em;
+}
+
+.navContainer{
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+.headerContainer{
+    grid-row-start: 2;
+    grid-row-end: 3;
+}
+.mainContainer{
+    grid-row-start: 3;
+    grid-row-end: 4;
+}
+
+.footerContainer{
+    grid-row-start: 4;
+    grid-row-end: 5;
+}
+
+.productsContainer{
+    grid-row-start: 2;
+    grid-row-end: 4;
+}
+
+.aboutContainer{
+    grid-row-start: 2;
+    grid-row-end: 4;
+}
+.contactContainer{
+    grid-row-start: 2;
+    grid-row-end: 4;
 }

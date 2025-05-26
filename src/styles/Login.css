@@ -1,0 +1,20 @@
+.loginContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.loginContainer button{
+    border-radius: 15px;
+    border-color: transparent;
+    transition: border-color 0.25s;
+    padding: 2em;
+    font-weight: bold;
+    cursor: pointer;
+    
+}
+
+.loginContainer button:hover{
+    border-color: #0077B6;
+}

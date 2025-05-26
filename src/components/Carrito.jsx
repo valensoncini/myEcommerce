@@ -1,6 +1,8 @@
 import CarritoCard from "../complements/CarritoCard";
+import '../styles/Carrito.css'
+import { Navigate } from "react-router-dom";
 
-function Carrito({productos, borrarProducto}){
+function Carrito({productos, borrarProducto, user}){
 
     const total = productos.reduce(
             (subtotal,producto) => subtotal + producto.price * producto.cantidad, 0        )
@@ -9,31 +11,21 @@ function Carrito({productos, borrarProducto}){
             borrarProducto(id)
     }
 
+    if(!user){
+        return(
+            <Navigate to="/login" replace/>
+        )
+    }
+
     return(
         <div className="carritoContainer">
-            <table>
-                <tr>
-                    <th>Image</th>
-                    <th>Name</th>
-                    <th>Description</th>
-                    <th>Unit Price</th>
-                    <th>Total Price</th>
-                    <th>Amount</th>
-                    <th>Options</th>
-                </tr>
-                <tr>
-                    <td>
-                        {productos.length > 0 ? productos.map((item) =>(
-                                <CarritoCard 
-                                    item={item}
-                                    funcionBorrado={borrarProductoCarrito}
-                                />
-                        )) : <p>Carrito Vacio</p>}
-                        {total > 0 ? <span>total: {total}$</span> : <></>}
-                    </td>
-                </tr>
-
-            </table>
+             {productos.length > 0 ? productos.map((item) =>(
+                    <CarritoCard 
+                        item={item}
+                        funcionBorrado={borrarProductoCarrito}
+                    />
+            )) : <p className="emptyCard">Carrito Vacio</p>}
+            {total > 0 ? <span className="total">total: {total}$</span> : <></>}
         </div>
     )
 }
